@@ -1,0 +1,2 @@
+// Mathematical unicode symbols
+ZMK_UNICODE_SINGLE(sigma_sum, N2, N2, N1, N1) // ∑

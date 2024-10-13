@@ -11,40 +11,59 @@
   ╰───────────╮ LH1 LH0 │ │ RH0 RH1 ╭───────────╯
               ╰─────────╯ ╰─────────╯ */
 // ensure all layers mentioned here have been defined in the .keymap file
-// #ifndef DEF
-//     #define DEF 0
-// #endif
-// #ifndef COL_DH
-//     #define COL_DH 1
-// #endif
-// #ifndef
-//     #define SYM 2       // Commonly used symbols
-// #endif
-// #ifndef
-//     #define NAV 3       // arrow keys, PGUP/PGDN, back, forward, window swappers, 
-// #endif
-// #ifndef
-//     #define FUN 4       // F keys, print screen, insert, etc.
-// #endif
-// #ifndef
-//     #define SYS 5   
-// #endif
+#ifndef DEF
+    #define DEF 0
+#endif
+#ifndef COL_DH
+    #define COL_DH 1
+#endif
+#ifndef SYM
+    #define SYM 2       // Commonly used symbols
+#endif
+#ifndef NAV
+    #define NAV 3       // arrow keys, PGUP/PGDN, back, forward, window swappers, 
+#endif
+#ifndef FUN
+    #define FUN 4       // F keys, print screen, insert, etc.
+#endif
+#ifndef SYS
+    #define SYS 5   
+#endif
 // Define user keymap layers (layers for character combos)
 
 #define MAPS DEF COL_DH 
 
+// Timeout terms (ms) for the combo (smaller value == harder to trigger, kp's must be more synchronized)
 #define COMBO_TERM_FAST 18
 #define COMBO_TERM_SLOW 30
 
+// the following 'IDLE' definitions specify a time in which no non-combo keys can be pressed
+// if any non-modifier key is pressed in this time BEFORE a key in the combo, the combo will not trigger
+
 #define COMBO_IDLE_FAST 150
 #define COMBO_IDLE_SLOW 50
-/* Left hand combos */
-ZMK_COMBO(lpar, &kp LPAR, LM2 LM1, MAPS)
 
+/* Left hand combos */
+ZMK_COMBO(lpar, &kp LPAR, LM2 LM1, MAPS, COMBO_TERM_SLOW, COMBO_IDLE_SLOW)  // left parenthesis: (
+ZMK_COMBO(lbrk, &kp LBKT, LM3 LM2, MAPS, COMBO_TERM_SLOW, COMBO_IDLE_SLOW)  // left bracket (+ shift for left brace): [ ( { )
+ZMK_COMBO(bslh,  &kp BSLH, LM2 LB2, MAPS, COMBO_TERM_SLOW, COMBO_IDLE_SLOW) // backslash
 
 /* right hand combos*/
+ZMK_COMBO(rpar, &kp RPAR, RM2 RM1, MAPS, COMBO_TERM_SLOW, COMBO_IDLE_SLOW)  // right parenthesis
+ZMK_COMBO(rbrk, &kp RBKT, RM3 RM2, MAPS, COMBO_TERM_SLOW, COMBO_IDLE_SLOW)  // right bracket/brace
+ZMK_COMBO(fslh,  &kp FSLH, RM2 RB2, MAPS, COMBO_TERM_SLOW, COMBO_IDLE_SLOW) // forward slash
 
+// Layer Shifts
+ZMK_COMBO(col2def, &to DEF, LM4 RM4, COL_DH, COMBO_TERM_FAST, COMBO_IDLE_FAST) // return to default qwerty layout from col_dh layer
+ZMK_COMBO(def2col, &to COL_DH, LM4 RM4, DEF, COMBO_TERM_FAST, COMBO_IDLE_FAST) // switch to col_dh from default layer
+/* NAV Layer combos */
+/* Left hand combos */
+ZMK_COMBO(d_lt, D_LT, LT3 LT2, NAV, COMBO_TERM_FAST, COMBO_IDLE_FAST) // switch to desktop on left
+ZMK_COMBO(d_rt, D_RT, LT2 LT1, NAV, COMBO_TERM_FAST, COMBO_IDLE_FAST) // switch to desktop on right
 
+/* Right hand combos */
+ZMK_COMBO(rw, &kp C_RW, RB1 RB2, NAV, COMBO_TERM_FAST, COMBO_IDLE_FAST) // rewind
+ZMK_COMBO(ff, &kp C_FF, RB2 RB3, NAV, COMBO_TERM_FAST, COMBO_IDLE_FAST) // fast forward
 
 
 

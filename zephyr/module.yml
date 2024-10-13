@@ -1,0 +1,4 @@
+name: zmk-includes
+build:
+    settings:
+        dts_root: .
