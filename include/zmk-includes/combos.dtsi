@@ -47,28 +47,28 @@
 ZMK_COMBO(lpar, &kp LPAR, LM2 LM1, MAPS, COMBO_TERM_SLOW, COMBO_IDLE_SLOW)  // left parenthesis: (
 ZMK_COMBO(lbrk, &kp LBKT, LM3 LM2, MAPS, COMBO_TERM_SLOW, COMBO_IDLE_SLOW)  // left bracket (+ shift for left brace): [ ( { )
 ZMK_COMBO(bslh, &kp BSLH, LM2 LB2, MAPS, COMBO_TERM_SLOW, COMBO_IDLE_SLOW) // backslash
-ZMK_COMBO(esc,  &kp ESC,  LT3 LT2, MAPS, COMBO_TERM_SLOW, COMBO_IDLE_SLOW) //escape
+ZMK_COMBO(esc,  &kp ESC,  LT3 LT2, MAPS, COMBO_TERM_FAST, COMBO_IDLE_FAST) // escape
+ZMK_COMBO(tld,  &kp TILDE,LT4 LT3, MAPS, COMBO_TERM_FAST, COMBO_IDLE_FAST) // tilde 
+
+
 /* right hand combos*/
 ZMK_COMBO(rpar, &kp RPAR, RM2 RM1, MAPS, COMBO_TERM_SLOW, COMBO_IDLE_SLOW)  // right parenthesis
 ZMK_COMBO(rbrk, &kp RBKT, RM3 RM2, MAPS, COMBO_TERM_SLOW, COMBO_IDLE_SLOW)  // right bracket/brace
-ZMK_COMBO(fslh, &kp FSLH, RM2 RB2, MAPS, COMBO_TERM_SLOW, COMBO_IDLE_SLOW) // forward slash
+ZMK_COMBO(fslh,  &kp FSLH, RM2 RB2, MAPS, COMBO_TERM_SLOW, COMBO_IDLE_SLOW) // forward slash
 
 // Layer Shifts
 ZMK_COMBO(col2def, &to DEF, LM4 RM4, COL_DH, COMBO_TERM_FAST, COMBO_IDLE_FAST) // return to default qwerty layout from col_dh layer
 ZMK_COMBO(def2col, &to COL_DH, LM4 RM4, DEF, COMBO_TERM_FAST, COMBO_IDLE_FAST) // switch to col_dh from default layer
-ZMK_COMBO(sys2def, &to DEF, LM3 LM2, SYS, COMBO_TERM_FAST, COMBO_IDLE_FAST) // escape system layer back to default
 /* NAV Layer combos */
 /* Left hand combos */
 ZMK_COMBO(d_lt, D_LT, LT3 LT2, NAV, COMBO_TERM_FAST, COMBO_IDLE_FAST) // switch to desktop on left
 ZMK_COMBO(d_rt, D_RT, LT2 LT1, NAV, COMBO_TERM_FAST, COMBO_IDLE_FAST) // switch to desktop on right
 
-ZMK_COMBO(btldr, &bootloader, LT4 LB0, MAPS, COMBO_TERM_FAST, COMBO_IDLE_SLOW) // access bootloader without using other half
-
 /* Right hand combos */
 ZMK_COMBO(rw, &kp C_RW, RB1 RB2, NAV, COMBO_TERM_FAST, COMBO_IDLE_FAST) // rewind
 ZMK_COMBO(ff, &kp C_FF, RB2 RB3, NAV, COMBO_TERM_FAST, COMBO_IDLE_FAST) // fast forward
 
-ZMK_COMBO(btldr, &bootloader, RT4 RB0, MAPS, COMBO_TERM_FAST, COMBO_IDLE_SLOW) // access bootloader without using other half
+
 
 /* Horizontal combos - left hand */
 // ZMK_COMBO(esc,   &kp ESC,      LT3 LT2,     DEF NAV NUM, COMBO_TERM_FAST, COMBO_IDLE_FAST)
