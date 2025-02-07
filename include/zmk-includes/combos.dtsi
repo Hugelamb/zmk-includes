@@ -46,24 +46,28 @@
 /* Left hand combos */
 ZMK_COMBO(lpar, &kp LPAR, LM2 LM1, MAPS, COMBO_TERM_SLOW, COMBO_IDLE_SLOW)  // left parenthesis: (
 ZMK_COMBO(lbrk, &kp LBKT, LM3 LM2, MAPS, COMBO_TERM_SLOW, COMBO_IDLE_SLOW)  // left bracket (+ shift for left brace): [ ( { )
-ZMK_COMBO(bslh,  &kp BSLH, LM2 LB2, MAPS, COMBO_TERM_SLOW, COMBO_IDLE_SLOW) // backslash
+ZMK_COMBO(bslh, &kp BSLH, LB4 LB3, MAPS, COMBO_TERM_SLOW, COMBO_IDLE_SLOW) // backslash
+ZMK_COMBO(esc,  &kp ESC,  LT3 LT2, MAPS, COMBO_TERM_FAST, COMBO_IDLE_FAST) // escape
+ZMK_COMBO(tld,  &kp TILDE,LT4 LT3, MAPS, COMBO_TERM_SLOW, COMBO_IDLE_SLOW) // tilde 
+
 
 /* right hand combos*/
 ZMK_COMBO(rpar, &kp RPAR, RM2 RM1, MAPS, COMBO_TERM_SLOW, COMBO_IDLE_SLOW)  // right parenthesis
 ZMK_COMBO(rbrk, &kp RBKT, RM3 RM2, MAPS, COMBO_TERM_SLOW, COMBO_IDLE_SLOW)  // right bracket/brace
 ZMK_COMBO(fslh,  &kp FSLH, RM2 RB2, MAPS, COMBO_TERM_SLOW, COMBO_IDLE_SLOW) // forward slash
-
+ZMK_COMBO(bspc_combo , &kp BSPC, RT2 RT1, MAPS, COMBO_TERM_SLOW, COMBO_IDLE_SLOW) // Backspace
+ZMK_COMBO(del_combo , &kp DEL, RT3 RT2, MAPS, COMBO_TERM_SLOW, COMBO_IDLE_SLOW) // Delete
 // Layer Shifts
 ZMK_COMBO(col2def, &to DEF, LM4 RM4, COL_DH, COMBO_TERM_FAST, COMBO_IDLE_FAST) // return to default qwerty layout from col_dh layer
 ZMK_COMBO(def2col, &to COL_DH, LM4 RM4, DEF, COMBO_TERM_FAST, COMBO_IDLE_FAST) // switch to col_dh from default layer
 /* NAV Layer combos */
 /* Left hand combos */
-ZMK_COMBO(d_lt, D_LT, LT3 LT2, NAV, COMBO_TERM_FAST, COMBO_IDLE_FAST) // switch to desktop on left
-ZMK_COMBO(d_rt, D_RT, LT2 LT1, NAV, COMBO_TERM_FAST, COMBO_IDLE_FAST) // switch to desktop on right
+//ZMK_COMBO(d_lt, D_LT, LT3 LT2, NAV, COMBO_TERM_FAST, COMBO_IDLE_FAST) // switch to desktop on left
+//ZMK_COMBO(d_rt, D_RT, LT2 LT1, NAV, COMBO_TERM_FAST, COMBO_IDLE_FAST) // switch to desktop on right
 
 /* Right hand combos */
-ZMK_COMBO(rw, &kp C_RW, RB1 RB2, NAV, COMBO_TERM_FAST, COMBO_IDLE_FAST) // rewind
-ZMK_COMBO(ff, &kp C_FF, RB2 RB3, NAV, COMBO_TERM_FAST, COMBO_IDLE_FAST) // fast forward
+//ZMK_COMBO(rw, &kp C_RW, RB1 RB2, NAV, COMBO_TERM_FAST, COMBO_IDLE_FAST) // rewind
+//ZMK_COMBO(ff, &kp C_FF, RB2 RB3, NAV, COMBO_TERM_FAST, COMBO_IDLE_FAST) // fast forward
 
 
 
