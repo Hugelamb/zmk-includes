@@ -1,0 +1,205 @@
+/* Japanese character macros */
+#define OUTER_MORPH(NAME, MOD, BINDING1, BINDING2) \
+  ZMK_MOD_MORPH(NAME, \
+    mods = <(MOD_L ## MOD|MOD_R ## MOD)>; \
+    bindings = <BINDING1>, <BINDING2>; \
+    keep-mods = <(MOD_R ## MOD)>; \
+  )
+
+#define INNER_MORPH(NAME, MOD, BINDING1, BINDING2) \
+  ZMK_MOD_MORPH(NAME, \
+    mods = <(MOD_R ## MOD)>; \
+    bindings = <BINDING1, <BINDING2>; \
+  )
+
+// Hiragana 
+ZMK_UNICODE_SINGLE(   hg_a,   N3, N0, N4, N2) // あ/   
+ZMK_UNICODE_SINGLE(   hg_i,   N3, N0, N4, N4) // い/   
+ZMK_UNICODE_SINGLE(   hg_u,   N3, N0, N4, N6) // う/
+ZMK_UNICODE_SINGLE(   hg_e,   N3, N0, N4, N8) // え/ 
+ZMK_UNICODE_SINGLE(   hg_o,   N3, N0, N4, A) // お/ 
+
+  //k-g row
+ZMK_UNICODE_SINGLE(hg_ka,  N3, N0, N4, B) // か/ゕ 
+ZMK_UNICODE_SINGLE(hg_ki,  N3, N0, N4, D)                      // き  
+ZMK_UNICODE_SINGLE(hg_ku,  N3,N0,N4,F)                         // く 
+ZMK_UNICODE_SINGLE(hg_ke,  N3, N0, N5, N1) //け
+ZMK_UNICODE_SINGLE(hg_ko,  N3, N0, N5, N3)                     // こ 
+
+  //s-z row
+ZMK_UNICODE_SINGLE(hg_sa,  N3,N0,N5,N5)   // さ 
+ZMK_UNICODE_SINGLE(hg_shi,  N3,N0,N5,N7)   // し
+ZMK_UNICODE_SINGLE(hg_su,  N3,N0,N5,N9)   // す
+ZMK_UNICODE_SINGLE(hg_se,  N3,N0,N5,B)    // せ
+ZMK_UNICODE_SINGLE(hg_so,  N3,N0,N5,D)    // そ
+
+  //t-d row
+ZMK_UNICODE_SINGLE(hg_ta,  N3,N0,N5,F)    // た
+ZMK_UNICODE_SINGLE(hg_chi,  N3,N0,N6,N1)   // ち
+ZMK_UNICODE_SINGLE(hg_tsu,  N3, N0, N6, N4)
+ZMK_UNICODE_SINGLE(hg_te,  N3,N0,N6,N6)   // て
+ZMK_UNICODE_SINGLE(hg_to,  N3,N0,N6,N8)   // と
+
+  //n row
+ZMK_UNICODE_SINGLE(hg_na,  N3,N0,N6,A)    // な
+ZMK_UNICODE_SINGLE(hg_ni,  N3,N0,N6,B)    // に
+ZMK_UNICODE_SINGLE(hg_nu,  N3,N0,N6,C)    // ぬ
+ZMK_UNICODE_SINGLE(hg_ne,  N3,N0,N6,D)    // ね
+ZMK_UNICODE_SINGLE(hg_no,  N3,N0,N6,E)    // の
+
+  //h-b-p row
+ZMK_UNICODE_SINGLE(hg_ha,  N3,N0,N6,F)    // は
+ZMK_UNICODE_SINGLE(hg_hi,  N3,N0,N7,N2)   // ひ
+ZMK_UNICODE_SINGLE(hg_hu,  N3,N0,N7,N5)   // ふ
+ZMK_UNICODE_SINGLE(hg_he,  N3,N0,N7,N8)   // へ
+ZMK_UNICODE_SINGLE(hg_ho,  N3,N0,N7,B)    // ほ
+ZMK_UNICODE_SINGLE(hg_pa,  N3,N0,N7,N1)  // ぱ 
+ZMK_UNICODE_SINGLE(hg_pe,  N3,N0,N7,A)    // ぺ 
+ZMK_UNICODE_SINGLE(hg_po,  N3,N0,N7,D)    // ぽ 
+ZMK_UNICODE_SINGLE(hg_pu,  N3,N0,N7,N7)   // ぷ
+  //m row
+ZMK_UNICODE_SINGLE(hg_ma,  N3,N0,N7,E)    // ま
+ZMK_UNICODE_SINGLE(hg_mi,  N3,N0,N7,F)    // み
+ZMK_UNICODE_SINGLE(hg_mu,  N3,N0,N8,N0)   // む
+ZMK_UNICODE_SINGLE(hg_me,  N3,N0,N8,N1)   // め
+ZMK_UNICODE_SINGLE(hg_mo,  N3,N0,N8,N2)   // も
+
+  //y row
+ZMK_UNICODE_SINGLE(hg_ya,  N3, N0, N8, N4)         // や 
+ZMK_UNICODE_SINGLE(hg_yu,  N3, N0, N8, N6)         // ゆ 
+ZMK_UNICODE_SINGLE(hg_yo,  N3, N0, N8, N8)         // よ 
+
+  //r row
+ZMK_UNICODE_SINGLE(hg_ra,  N3,N0,N8,N9)   // ら
+ZMK_UNICODE_SINGLE(hg_ri,  N3,N0,N8,A)    // り
+ZMK_UNICODE_SINGLE(hg_ru,  N3,N0,N8,B)    // る
+ZMK_UNICODE_SINGLE(hg_re,  N3,N0,N8,C)    // れ
+ZMK_UNICODE_SINGLE(hg_ro,  N3,N0,N8,D)    // ろ
+
+  //w row
+ZMK_UNICODE_SINGLE(hg_wa,  N3, N0, N8, F)      // わ 
+ZMK_UNICODE_SINGLE(hg_wi,  N3,N0,N9,N0)   // ゐ
+
+ZMK_UNICODE_SINGLE(hg_we,  N3,N0,N9,N1)   // ゑ
+ZMK_UNICODE_SINGLE(hg_wo,  N3,N0,N9,N2)   // を
+
+  //n consonant sound
+ZMK_UNICODE_SINGLE(hg_nn,  N3,N0,N9,N3)   // ん
+
+  //sound modifiers (marks)
+ZMK_UNICODE_PAIR(hg_vs,  N3, N0, N9, N9,     N3, N0, N9, B) // ◌゙ / ゛
+ZMK_UNICODE_PAIR(hg_svs,  N3, N0, N9, A,     N3, N0, N9, C) // ◌゚ / ゜
+ZMK_UNICODE_SINGLE(hg_choonpu,  N3,N0,F,C)                  // ー
+ZMK_UNICODE_PAIR(hg_iter,  N3, N0, N9, D,     N3, N0, N9, E) // ゝ/ゞ 
+
+  // yori digraph
+ZMK_UNICODE_SINGLE(hg_dy,  N3,N0,N9,F)    // ゟ
+
+  // small letters (double underscore)
+ZMK_UNICODE_SINGLE(hg__a, N3, N0, N4, N1)      // ぁ
+ZMK_UNICODE_SINGLE(hg__i, N3, N0, N4, N3)      // ぃ
+ZMK_UNICODE_SINGLE(hg__u, N3, N0, N4, N5)      // ぅ
+ZMK_UNICODE_SINGLE(hg__e, N3, N0, N4, N7)      // ぇ
+ZMK_UNICODE_SINGLE(hg__o, N3, N0, N4, N9)      // ぉ
+ZMK_UNICODE_SINGLE(hg__ka,N3, N0, N9, N5)      // ゕ 
+ZMK_UNICODE_SINGLE(hg__ke,N3, N0, N9, N6)      // ゖ
+ZMK_UNICODE_SINGLE(hg__tsu,N3, N0, N6, N3)      // っ
+ZMK_UNICODE_SINGLE(hg__ya,N3, N0, N8, N3)      // ゃ
+ZMK_UNICODE_SINGLE(hg__yu,N3, N0, N8, N5)      // ゅ
+ZMK_UNICODE_SINGLE(hg__yo,N3, N0, N8, N7)      // ょ
+ZMK_UNICODE_SINGLE(hg__wa,N3, N0, N8, E)   // ゎ  
+
+  // punctuations
+ZMK_UNICODE_SINGLE(hg_period, N3,N0,N0,N2)      // 。    
+ZMK_UNICODE_SINGLE(hg_comma,  N3,N0,N0,N1)      // 、
+ZMK_UNICODE_SINGLE(hg_ip,  N3,N0,F,B)           // ・
+
+/* MOD MORPH DEFINITIONS */
+OUTER_MORPH(hg_period__a, SFT, &hg_period, &hg__a)   // 。/ ぁ <=> Q
+OUTER_MORPH(hg_ka_e, SFT, &hg_ka, &hg_e)         // か/え <=> W
+OUTER_MORPH(hg_ta_ri, SFT, &hg_ta, &hg_ri)
+OUTER_MORPH(hg_ko__ya, SFT, &hg_ko, &hg__ya)
+OUTER_MORPH(hg_sa_re, SFT, &hg_sa, &hg_re)
+
+OUTER_MORPH(hg_u_wo, SFT, &hg_u, &hg_wo)
+OUTER_MORPH(hg_shi_a, SFT, &hg_shi, &hg_a)
+OUTER_MORPH(hg_te_na, SFT, &hg_te, &hg_na)
+OUTER_MORPH(hg_ke__yu, SFT, &hg_ke, &hg__yu)
+OUTER_MORPH(hg_se_mo, SFT, &hg_se, &hg_mo)
+
+OUTER_MORPH(hg_dot__u, SFT, &kp DOT, &hg__u)
+OUTER_MORPH(hg_hi_choonpu, SFT, &hg_hi, &hg_choonpu)
+OUTER_MORPH(hg_su_ro, SFT, &hg_su, &hg_ro)
+OUTER_MORPH(hg_hu_ya, SFT, &hg_hu, &hg_ya)
+OUTER_MORPH(hg_he__i, SFT, &hg_he, &hg__i)
+
+// RIGHT_MORPH(hg_yo_pa, SFT, &hg_yo, &hg_pa)
+// OUTER_MORPH(hg_ra_yo_pa, SFT, &hg_ra, &hg_yo_pa)
+
+OUTER_MORPH(hg_chi_ni, SFT, &hg_chi, &hg_ni)
+OUTER_MORPH(hg_ku_ru, SFT, &hg_ku, &hg_ru)
+OUTER_MORPH(hg_tsu_ma, SFT, &hg_tsu, &hg_ma)
+
+// RIGHT_MORPH(hg__e_bi, SFT, &hg__e, &hg_bi)
+// OUTER_MORPH(hg_c__e_bi, SFT, &kp COMMA, &hg__e_bi)
+
+OUTER_MORPH(hg_ha_mi, SFT, &hg_ha, &hg_mi)
+OUTER_MORPH(hg_to_o, SFT, &hg_to, &hg_o)
+OUTER_MORPH(hg_ki_no, SFT, &hg_ki, &hg_no)
+
+OUTER_MORPH(hg__yo_po, SFT, &hg__yo, &hg_po)
+  OUTER_MORPH(hg_i__yo_po, SFT, &hg_i, &hg__yo_po)
+
+OUTER_MORPH(hg_nn__tsu, SFT, &hg_nn, &hg__tsu)
+
+OUTER_MORPH(hg_nu_pu, SFT, &hg_nu, &hg_pu)
+  OUTER_MORPH(hg_me_nu_pu, SFT, &hg_me, &hg_nu_pu)
+OUTER_MORPH(hg_so_yu, SFT, &hg_so, &hg_yu)
+
+// RIGHT_MORPH(hg_mu_pe, SFT, &hg_mu, &hg_pe)
+OUTER_MORPH(hg_mu_pe, SFT, &hg_mu, &hg_pe)
+  OUTER_MORPH(hg_ne_mu_pe, SFT, &hg_ne, &hg_mu_pe)
+
+OUTER_MORPH(hg_ho_wa, SFT, &hg_ho, &hg_wa)
+OUTER_MORPH(hg_ip__o, SFT, &hg_ip, &hg__o)
+
+
+
+
+// Try new trio morph scheme
+ZMK_THUMB_SHIFT_TRIO(lt4,  N3, N0, N0, N2,  N3, N0, N0, N2,  N3, N0, N4, N1)  // (。, ,ぁ)
+ZMK_THUMB_SHIFT_TRIO(lt3,  N3, N0, N4, B,  N3, N0, N4, C,  N3, N0, N4, N8)    // (か,が,え) 
+ZMK_THUMB_SHIFT_TRIO(lt2,  N3, N0, N8, A,  N3, N0, N5, N0,  N3, N0, N5, N0)   
+ZMK_THUMB_SHIFT_TRIO(lt1,  N3, N0, N5, N3,  N3, N0, N5, N4,  N3, N0, N8, N3)
+ZMK_THUMB_SHIFT_TRIO(lt0,  N3, N0, N5, N5,  N3, N0, N5, N6,  N3, N0, N8, C)
+
+ZMK_THUMB_SHIFT_TRIO(rt0,  N3, N0, N8, N9,  N3, N0, N7, N1,  N3, N0, N8, N8)
+ZMK_THUMB_SHIFT_TRIO(rt1,  N3, N0, N6, N1,  N3, N0, N6, N2,  N3, N0, N6, B)
+ZMK_THUMB_SHIFT_TRIO(rt2,  N3, N0, N4, F,  N3, N0, N5, N0,  N3, N0, N8, B)
+ZMK_THUMB_SHIFT_TRIO(rt3,  N3, N0, N6, N4,  N3, N0, N6, N5,  N3, N0, N7, E)
+ZMK_THUMB_SHIFT_TRIO(rt4,  N0, N0, N2, C,  N3, N0, N7, N4,  N3, N0, N4, N7)
+
+ZMK_THUMB_SHIFT_TRIO(lm4,  N3, N0, N4, N6,  N3, N0, N4, N6,  N3, N0, N9, N2)
+ZMK_THUMB_SHIFT_TRIO(lm3,  N3, N0, N5, N7,  N3, N0, N5, N8,  N3, N0, N4, N2)
+ZMK_THUMB_SHIFT_TRIO(lm2,  N3, N0, N6, N6,  N3, N0, N6, N7,  N3, N0, N6, A)
+ZMK_THUMB_SHIFT_TRIO(lm1,  N3, N0, N5, N1,  N3, N0, N5, N2,  N3, N0, N8, N5)
+ZMK_THUMB_SHIFT_TRIO(lm0,  N3, N0, N5, B,  N3, N0, N5, C,  N3, N0, N8, N2)
+
+ZMK_THUMB_SHIFT_TRIO(rm0,  N3, N0, N6, F,  N3, N0, N7, N0,  N3, N0, N7, F)
+ZMK_THUMB_SHIFT_TRIO(rm1,  N3, N0, N6, N8,  N3, N0, N6, N9,  N3, N0, N4, A)
+ZMK_THUMB_SHIFT_TRIO(rm2,  N3, N0, N4, D,  N3, N0, N4, E,  N3, N0, N6, E)
+ZMK_THUMB_SHIFT_TRIO(rm3,  N3, N0, N4, N4,  N3, N0, N7, D,  N3, N0, N8, N7)
+ZMK_THUMB_SHIFT_TRIO(rm4,  N3, N0, N9, N3,  N3, N0, N9, N3,  N3, N0, N6, N3)
+
+ZMK_THUMB_SHIFT_TRIO(lb4,  N0, N0, N2, E,  N0, N0, N2, E,  N3, N0, N4, N5)
+ZMK_THUMB_SHIFT_TRIO(lb3,  N3, N0, N7, N2,  N3, N0, N7, N3,  N3, N0, F, C)
+ZMK_THUMB_SHIFT_TRIO(lb2,  N3, N0, N5, N9,  N3, N0, N5, A,  N3, N0, N8, D)
+ZMK_THUMB_SHIFT_TRIO(lb1,  N3, N0, N7, N5,  N3, N0, N7, N6,  N3, N0, N8, N4)
+ZMK_THUMB_SHIFT_TRIO(lb0,  N3, N0, N7, N8,  N3, N0, N7, N9,  N3, N0, N4, N3)
+
+ZMK_THUMB_SHIFT_TRIO(rb0,  N3, N0, N8, N1,  N3, N0, N7, N7,  N3, N0, N6, C)
+ZMK_THUMB_SHIFT_TRIO(rb1,  N3, N0, N5, D,  N3, N0, N5, E,  N3, N0, N8, N6)
+ZMK_THUMB_SHIFT_TRIO(rb2,  N3, N0, N6, D,  N3, N0, N7, A,  N3, N0, N8, N0)
+ZMK_THUMB_SHIFT_TRIO(rb3,  N3, N0, N7, B,  N3, N0, N7, C,  N3, N0, N8, F)
+ZMK_THUMB_SHIFT_TRIO(rb4,  N3, N0, F, B,  N3, N0, N0, N1,  N3, N0, N4, N9)
+

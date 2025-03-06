@@ -197,6 +197,18 @@
             }; \
         }; \
     };
+#define UC_RSFTMORPH(name, uc_binding, shifted_uc_binding) \
+    / { \
+        behaviors { \
+            name: name { \
+                compatible = "zmk,behavior-mod-morph"; \
+                #binding-cells = <0>; \
+                bindings = <uc_binding>, <shifted_uc_binding>; \
+                mods = <(MOD_RSFT)>; \
+            }; \
+        }; \
+    };
+
 
 #define ZMK_UNICODE_SINGLE(name, L0, L1, L2, L3) \
     UC_MACRO(name ## _lower, &kp L0 &kp L1 &kp L2 &kp L3) \
@@ -206,6 +218,15 @@
     UC_MACRO(name ## _lower, &kp L0 &kp L1 &kp L2 &kp L3) \
     UC_MACRO(name ## _upper, &kp U0 &kp U1 &kp U2 &kp U3) \
     UC_MODMORPH(name, &name ## _lower, &name ## _upper)
+
+#define ZMK_THUMB_SHIFT_TRIO(name, N0, N1, N2, N3, L0, L1, L2, L3, R0, R1, R2, R3) \
+    UC_MACRO(name ## _normal, &kp N0 &kp N1 &kp N2 &kp N3) \
+    UC_MACRO(name ## _left,   &kp L0 &kp L1 &kp L2 &kp L3) \
+    UC_MACRO(name ## _right,  &kp R0 &kp R1 &kp R2 &kp R3) \
+    UC_MODMORPH(name, &name ## _normal, &name ## _sft) \
+    UC_RSFTMORPH(name ## _sft, &name ## _left, &name ## _right)
+    
+    
 
 /* ZMK_APPLY_MATRIX_TRANSFORM */
 
