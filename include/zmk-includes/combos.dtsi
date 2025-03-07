@@ -73,7 +73,7 @@ ZMK_COMBO(del_combo , &kp DEL, RT3 RT2, MAPS, COMBO_TERM_SLOW, COMBO_IDLE_SLOW) 
 ZMK_COMBO(col2def, &to DEF, LM4 RM4, COL_DH, COMBO_TERM_FAST, COMBO_IDLE_FAST) // return to default qwerty layout from col_dh layer
 ZMK_COMBO(def2col, &to COL_DH, LM4 RM4, DEF, COMBO_TERM_FAST, COMBO_IDLE_FAST) // switch to col_dh from default layer
 ZMK_COMBO(def2jap, &to JAP, LM3 RM3, DEF, COMBO_TERM_FAST, COMBO_IDLE_FAST) // switch to jap from default layer
-ZMK_COMBO(jap2def, &to DEF, LM3 RM3, JAP, COMBO_TERM_FAST, COMBO_IDLE_FAST) // switch to default from jap layer
+ZMK_COMBO(jap2def, &to DEF, LM3 RM3, JAP, COMBO_TERM_SLOW, COMBO_IDLE_FAST) // switch to default from jap layer
 
 /* NAV Layer combos */
 /* Left hand combos */
