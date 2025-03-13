@@ -45,9 +45,10 @@
     #define SYS 10   
 #endif
 // Define user keymap layers (layers for character combos)
-
+#define ALL 0 1 2 3 4 5 6 7 8 9 10
 #define MAPS DEF COL_DH HIR KAT
 
+#define KAN HIR KAT
 // Timeout terms (ms) for the combo (smaller value == harder to trigger, kp's must be more synchronized)
 #define COMBO_TERM_FAST 18
 #define COMBO_TERM_SLOW 30
@@ -64,8 +65,7 @@ ZMK_COMBO(lbrk, &kp LBKT, LM3 LM2, MAPS, COMBO_TERM_SLOW, COMBO_IDLE_SLOW)  // l
 ZMK_COMBO(bslh, &kp BSLH, LB4 LB3, MAPS, COMBO_TERM_SLOW, COMBO_IDLE_SLOW) // backslash
 ZMK_COMBO(esc,  &kp ESC,  LT3 LT2, MAPS, COMBO_TERM_FAST, COMBO_IDLE_FAST) // escape
 ZMK_COMBO(tld,  &kp TILDE,LT4 LT3, MAPS, COMBO_TERM_SLOW, COMBO_IDLE_SLOW) // tilde 
-
-
+ZMK_COMBO(tab,  &kp TAB,  LM3 LM1, MAPS, COMBO_TERM_FAST, COMBO_IDLE_FAST) // tab
 /* right hand combos*/
 ZMK_COMBO(rpar, &kp RPAR, RM2 RM1, MAPS, COMBO_TERM_SLOW, COMBO_IDLE_SLOW)  // right parenthesis
 ZMK_COMBO(rbrk, &kp RBKT, RM3 RM2, MAPS, COMBO_TERM_SLOW, COMBO_IDLE_SLOW)  // right bracket/brace
@@ -75,9 +75,9 @@ ZMK_COMBO(del_combo , &kp DEL, RT3 RT2, MAPS, COMBO_TERM_SLOW, COMBO_IDLE_SLOW) 
 // Layer Shifts
 ZMK_COMBO(col2def, &to DEF, LM4 RM4, COL_DH, COMBO_TERM_FAST, COMBO_IDLE_FAST) // return to default qwerty layout from col_dh layer
 ZMK_COMBO(def2col, &to COL_DH, LM4 RM4, DEF, COMBO_TERM_FAST, COMBO_IDLE_FAST) // switch to col_dh from default layer
-ZMK_COMBO(def2hir, &to HIR, LM3 RM3, DEF, COMBO_TERM_SLOW, COMBO_IDLE_FAST) // switch to jap from default layer
-ZMK_COMBO(hir2def, &to DEF, LM3 RM3, HIR, COMBO_TERM_SLOW, COMBO_IDLE_FAST) // switch to default from jap layer
-ZMK_COMBO(kat2def, &to DEF, LM3 RM3, KAT, COMBO_TERM_SLOW, COMBO_IDLE_FAST) // switch to default from katakana layer
+ZMK_COMBO(def2hir, &to HIR, LM1 RM1, DEF, COMBO_TERM_SLOW, COMBO_IDLE_FAST) // switch to jap from default layer
+ZMK_COMBO(kan2def, &to DEF, LM1 RM1, KAN, COMBO_TERM_SLOW, COMBO_IDLE_FAST) // switch to default from jap layer
+ZMK_COMBO(lay2def, &to DEF, LT3 LT2, ALL, COMBO_TERM_FAST, COMBO_IDLE_FAST) // escape to default layer
 /* NAV Layer combos */
 /* Left hand combos */
 //ZMK_COMBO(d_lt, D_LT, LT3 LT2, NAV, COMBO_TERM_FAST, COMBO_IDLE_FAST) // switch to desktop on left
