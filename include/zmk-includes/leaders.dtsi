@@ -9,7 +9,7 @@
               ╰─────────╯ ╰─────────╯ */
 // ensure all layers mentioned here have been defined in the .keymap file
 
-ZMK_LEADER_SEQUENCE(col, &to COL_DH, LB2 RT3 RM3 LM3 RM0) // go to colemak dh layer? Sequence is: c o l d h
+ZMK_LEADER_SEQUENCE(col, &to COL, LB2 RT3 RM3 LM3 RM0) // go to colemak dh layer? Sequence is: c o l d h
 
 /* Maths Symbols/Greek Letters */
 ZMK_LEADER_SEQUENCE(sigma_sum,   &sigma_sum, LM4 LM3)    // ∑ (Unicode 2211: N-ary summation)
